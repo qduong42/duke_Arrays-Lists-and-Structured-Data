@@ -34,9 +34,9 @@ public class WordPlay{
 		//boolean bisVowel = isVowel('a');
 		// System.out.println(bisVowel);
 		//test2
-		// String phrase = "Hello World";
-		// String result = replaceVowels(phrase, '*');
-		// System.out.println("result: " + result);
+		 String phrase = "Hello World";
+		 String result = replaceVowels(phrase, '*');
+		 System.out.println("result: " + result);
 		//test3
 		System.out.println(emphasize("dna ctgaaactga", 'a'));
 		System.out.println(emphasize("Mary Bella Abracadabra",'a'));
