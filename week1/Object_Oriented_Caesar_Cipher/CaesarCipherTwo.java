@@ -8,9 +8,11 @@ public class CaesarCipherTwo{
 	private int main_key2;
 	public CaesarCipherTwo(int key1, int key2){
 		if (key1 > 25)
-			main_key1 = key1 % 26;
+			key1 = key1 % 26;
 		if (key2 > 26)
-			main_key2 = key2 % 26;
+			key2 = key2 % 26;
+		main_key1 = key1;
+		main_key2 = key2;
 		alphabet = "abcdefghijklmnopqrstuvwxyz";
 		shiftedAlphabet1 = alphabet.substring(main_key1) + alphabet.substring(0, main_key1);
 		shiftedAlphabet2 = alphabet.substring(main_key2) + alphabet.substring(0, main_key2);
@@ -28,7 +30,8 @@ public class CaesarCipherTwo{
 							outputsb.append(Character.toUpperCase(shiftedAlphabet1.charAt(j)));
 						else
 							outputsb.append(shiftedAlphabet1.charAt(j));
-					}
+					}		CaesarCipherTwo cct = new CaesarCipherTwo(15, 5);
+
 				}
 			}
 			else

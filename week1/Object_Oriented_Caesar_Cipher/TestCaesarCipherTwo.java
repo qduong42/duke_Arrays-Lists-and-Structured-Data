@@ -16,6 +16,7 @@ public class TestCaesarCipherTwo{
 			dkey = 26 - (4 - maxDex);
 		}
 		return dkey;
+
 	}
 	private static int [] countLetters(String message){
 		String alph = "abcdefghijklmnopqrstuvwxyz";
@@ -51,9 +52,9 @@ public class TestCaesarCipherTwo{
 	private static void simpleTests(){
 		FileResource fr = new FileResource();
 		String message = fr.asString();
-		CaesarCipherTwo cct = new CaesarCipherTwo(15, 5);
+		CaesarCipherTwo cct = new CaesarCipherTwo(15,5);
 		String encrypted = cct.encryptTwoKeys(message);
-		//System.out.println("Encrypted string: " + encrypted);
+		System.out.println("Encrypted string: " + encrypted);
 		String decrypted = breakCaesarCipher(encrypted);
 		System.out.println("Decrypted string: " + decrypted);
 	}
