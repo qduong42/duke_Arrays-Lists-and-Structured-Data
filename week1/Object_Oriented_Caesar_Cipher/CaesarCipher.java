@@ -13,8 +13,8 @@ public class CaesarCipher{
 		String lowerInput = input.toLowerCase();
 		StringBuilder outputsb = new StringBuilder();
 		for (int i = 0; i < input.length(); i++) {
-			if(outputsb.length() != i)
-				outputsb.append(input.charAt(i - 1));
+			if(!Character.isLetter(input.charAt(i)))
+				outputsb.append(input.charAt(i));
 			for (int j = 0; j < alphabet.length(); j++) {
 				if (lowerInput.charAt(i) == alphabet.charAt(j)){
 					if(input.charAt(i) == Character.toUpperCase(alphabet.charAt(j)))

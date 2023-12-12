@@ -50,12 +50,12 @@ public class TestCaesarCipherTwo{
 		return decrypted;
 	}
 	private static void simpleTests(){
-		FileResource fr = new FileResource();
-		String message = fr.asString();
-		CaesarCipherTwo cct = new CaesarCipherTwo(15,5);
-		String encrypted = cct.encryptTwoKeys(message);
-		System.out.println("Encrypted string: " + encrypted);
-		String decrypted = breakCaesarCipher(encrypted);
+		 FileResource fr = new FileResource();
+		 String message = fr.asString();
+		//CaesarCipherTwo cct = new CaesarCipherTwo(14,24);
+		//String encrypted = cct.encryptTwoKeys("");
+		//System.out.println("Encrypted string: " + encrypted);
+		String decrypted = breakCaesarCipher(message);
 		System.out.println("Decrypted string: " + decrypted);
 	}
 	public static void main(String[] args){

@@ -21,8 +21,8 @@ public class CaesarCipherTwo{
 		String lowerInput = input.toLowerCase();
 		StringBuilder outputsb = new StringBuilder();
 		for (int i = 0; i < input.length(); i++) {
-			if(outputsb.length() != i)
-				outputsb.append(input.charAt(i - 1));
+			if(!Character.isLetter(input.charAt(i)))
+				outputsb.append(input.charAt(i));
 			if (i % 2 == 0){
 				for (int j = 0; j < alphabet.length(); j++) {
 					if (lowerInput.charAt(i) == alphabet.charAt(j)){
@@ -30,7 +30,7 @@ public class CaesarCipherTwo{
 							outputsb.append(Character.toUpperCase(shiftedAlphabet1.charAt(j)));
 						else
 							outputsb.append(shiftedAlphabet1.charAt(j));
-					}		CaesarCipherTwo cct = new CaesarCipherTwo(15, 5);
+					}
 
 				}
 			}

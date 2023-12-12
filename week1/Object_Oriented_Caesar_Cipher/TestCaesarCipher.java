@@ -33,12 +33,12 @@ public class TestCaesarCipher{
 		return (cc.decrypt(input));
 	}
 	private static void simpleTests(){
-		FileResource fr = new FileResource();
-		String str = fr.asString();
-		CaesarCipher cc = new CaesarCipher(18);
-		String encrypted = cc.encrypt(str);
+		//FileResource fr = new FileResource();
+		//String str = fr.asString();
+		CaesarCipher cc = new CaesarCipher(15);
+		String encrypted = cc.encrypt("Can you imagine life WITHOUT the internet AND computers in your pocket?");
 		System.out.println("Encrypted String: " + encrypted);
-		System.out.println("Decrypted String:" + cc.decrypt(encrypted));
+		System.out.println("Decrypted String: " + cc.decrypt(encrypted));
 		System.out.println("Automatically Decrypted String: " + breakCaesarCipher(encrypted));
 	}
 	public static void main(String[] args){
