@@ -43,8 +43,8 @@ public class CharactersInPlay{
 	public void characterWithNumParts(int num1, int num2){
 		for (int i = 0; i < characterCounts.size(); i++) {
 			if (characterCounts.get(i) >= num1 && characterCounts.get(i) <= num2){
-				System.out.println("Main character: " + 
-				characterNames.get(i) + " no of speaking parts: " + characterCounts.get(i));
+				System.out.println("character: " + 
+				characterNames.get(i) + " has no of speaking parts: " + characterCounts.get(i));
 			}
 		}
 	}
@@ -53,12 +53,12 @@ public class CharactersInPlay{
 		//System.out.println("characters name size: " + characterNames.size());
 		//System.out.println("characters count size: " + characterCounts.size());
 		// for (int i = 0; i < characterCounts.size(); i++) {
-		// 	if (characterCounts.get(i) > 50){
+		// 	if (characterCounts.get(i) > 20){
 		// 		System.out.println("Main character: " + 
 		// 		characterNames.get(i) + " no of speaking parts: " + characterCounts.get(i));
 		// 	}
 		// }
-		characterWithNumParts(20, 40);
+		characterWithNumParts(10, 15);
 	}
 	public static void main(String[] args) {
 		CharactersInPlay cp = new CharactersInPlay();
