@@ -2,16 +2,6 @@ import edu.duke.*;
 import java.util.*;
 
 public class GladLibMap {
-/* 	private ArrayList<String> adjectiveList;
-	private ArrayList<String> nounList;
-	private ArrayList<String> colorList;
-	private ArrayList<String> countryList;
-	private ArrayList<String> nameList;
-	private ArrayList<String> animalList;
-	private ArrayList<String> timeList;
-	private ArrayList<String> verbList;
-	private ArrayList<String> fruitList; */
-	private ArrayList<String> seenList;
 	private HashMap <String, ArrayList <String>> myMap;
 	
 	private Random myRandom;
@@ -38,25 +28,19 @@ public class GladLibMap {
 			al = readIt(source + "/" + categories[index] + ".txt");
 			myMap.put(categories[index], al);
 		}
-/* 		adjectiveList= readIt(source+"/adjective.txt");	
-		nounList = readIt(source+"/noun.txt");
-		colorList = readIt(source+"/color.txt");
-		countryList = readIt(source+"/country.txt");
-		nameList = readIt(source+"/name.txt");		
-		animalList = readIt(source+"/animal.txt");
-		timeList = readIt(source+"/timeframe.txt");	
-		verbList = readIt(source + "/verb.txt");
-		fruitList = readIt(source + "/fruit.txt"); */
-		seenList = new ArrayList<String>();
 	}
 	
 	private String randomFrom(ArrayList<String> source){
+		String answer = "";
+		if (source.size() == 0)
+			return "";
 		int index = myRandom.nextInt(source.size());
-		return source.get(index);
+		answer = source.get(index);
+		source.remove(index);
+		return answer;
 	}
 	
 	private String getSubstitute(String label) {
-		// System.out.println("label " + label);
 		if (label.equals("number"))
 			return ""+myRandom.nextInt(50)+5;
 		if(myMap.containsKey(label) == false)
@@ -73,14 +57,8 @@ public class GladLibMap {
 		String prefix = w.substring(0,first);
 		String suffix = w.substring(last+1);
 		String sub = getSubstitute(w.substring(first+1,last));
-		long start = System.currentTimeMillis();
-		long end = 0;
-		while (seenList.contains(sub) && end - start < 1000)
-		{
-			end = System.currentTimeMillis();
-			sub = getSubstitute(w.substring(first+1,last));
-		}
-		seenList.add(sub);
+		if (sub == "")
+			return w;
 		return prefix+sub+suffix;
 	}
 	
@@ -138,7 +116,6 @@ public class GladLibMap {
 		return list;
 	}
 	private void makeStory(){
-		seenList.clear();
 	    System.out.println("\n");
 		String story = fromTemplate();
 		// String story = fromTemplate("data/madtemplate2.txt");
