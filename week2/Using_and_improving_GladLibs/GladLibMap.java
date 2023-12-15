@@ -3,6 +3,7 @@ import java.util.*;
 
 public class GladLibMap {
 	private HashMap <String, ArrayList <String>> myMap;
+	private HashMap <String, Integer> wordsSeen;
 	
 	private Random myRandom;
 	
@@ -20,6 +21,7 @@ public class GladLibMap {
 	}
 	
 	private void initializeFromSource(String source) {
+		wordsSeen = new HashMap<String, Integer>();
 		myMap = new HashMap<String, ArrayList<String>>();
 		String [] categories = {"adjective", "animal", "color", "country", 
 		"fruit", "name", "noun", "verb", "timeframe"};
@@ -41,6 +43,8 @@ public class GladLibMap {
 	}
 	
 	private String getSubstitute(String label) {
+		if(wordsSeen.containsKey(label) == false)
+			wordsSeen.put(label, myMap.get(label).size());
 		if (label.equals("number"))
 			return ""+myRandom.nextInt(50)+5;
 		if(myMap.containsKey(label) == false)
@@ -122,11 +126,24 @@ public class GladLibMap {
 		printOut(story, 60);
 		System.out.print("\n");
 	}
-	
+	private void totalWordsInMap(){
+		for(String label : myMap.keySet())
+		{
+			System.out.println("label: " + label +" had " + myMap.get(label).size() + " possible words to pick from.");
+		}
+	}
+	private int totalWordsConsidered(){
+		int max = 0;
+        for (Map.Entry<String, Integer> entry : wordsSeen.entrySet()) {
+            max += entry.getValue();
+        }
+		return max;
+	}
 	public static void main(String[] args) {
 		GladLibMap gl = new GladLibMap();
+		gl.totalWordsInMap();
 		gl.makeStory();
-		
+		System.out.println("Total words considered is: " + gl.totalWordsConsidered());
 	}
 
 }
