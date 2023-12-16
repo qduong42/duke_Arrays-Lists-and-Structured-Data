@@ -59,7 +59,7 @@ public class CodonMap{
 			System.out.println("Reading frame starting with " + i + " results in " + codonMap.size() +" unique codons");		
 			String codon = getMostCommonCodon();
 			System.out.println("Most common codon is " + codon + " with count " + codonMap.get(codon));
-			printCodonCounts(1, 5);
+			printCodonCounts(7, 7);
 			System.out.println("\n\n");
 		}
 	}

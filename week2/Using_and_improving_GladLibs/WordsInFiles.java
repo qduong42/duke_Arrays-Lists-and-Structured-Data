@@ -46,7 +46,7 @@ public class WordsInFiles{
 		ArrayList<String> wordsInXFiles  = new ArrayList<>() ;
 		for (String word : wordMap.keySet()) {
 			if (wordMap.get(word).size() == number)
-				wordsInXFiles = wordMap.get(word);
+				wordsInXFiles.add(word);
 		}
 		return wordsInXFiles;
 	}
@@ -62,23 +62,28 @@ public class WordsInFiles{
 	}
 	public void tester() throws IOException{
 		buildWordFileMap();
-		int max = maxNumber();
-		System.out.println("Max number of files any word is in: " + max);
-		ArrayList<String> numOccurences = wordsInNumFiles(500);
-		System.out.println("String occuring 2 times in files: ");
-		for(int i = 0; i < numOccurences.size();i++)
-		{
-			System.out.println(numOccurences.get(i));
+		ArrayList <String> str;
+		str = wordMap.get("tree");
+		for (String str2 : str) {
+			System.out.println("file: " + str2);
 		}
-		printFilesln("the");
-		System.out.println("Complete map:");
-		for (String str : wordMap.keySet()) {
-			System.out.print("Key: " + str);
-			for (int index = 0; index < wordMap.get(str).size(); index++) {
-				System.out.print(" value: " + wordMap.get(str).get(index));
-			}
-			System.out.print("\n");
-		}
+		// int max = maxNumber();
+		// System.out.println("Max number of files any word is in: " + max);
+		// ArrayList<String> numOccurences = wordsInNumFiles(4);
+		// System.out.println("How many words occuring 4 times in files: " + numOccurences.size());
+		// for(int i = 0; i < numOccurences.size();i++)
+		// {
+		// 	System.out.println(numOccurences.get(i));
+		// }
+		//printFilesln("the");
+		// System.out.println("Complete map:");
+		// for (String str : wordMap.keySet()) {
+		// 	System.out.print("Key: " + str);
+		// 	for (int index = 0; index < wordMap.get(str).size(); index++) {
+		// 		System.out.print(" value: " + wordMap.get(str).get(index));
+		// 	}
+		// 	System.out.print("\n");
+		// }
 	}
 	public static void main(String[] args) {
 		WordsInFiles wif = new WordsInFiles();
