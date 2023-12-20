@@ -1,4 +1,4 @@
-package duke.edu;
+package edu.duke;
 
 import java.awt.Image;
 import java.awt.image.BufferedImage;

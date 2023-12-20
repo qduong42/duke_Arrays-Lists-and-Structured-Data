@@ -1,4 +1,4 @@
-package duke.edu;
+package edu.duke;
 
 import java.io.BufferedReader;
 import java.io.InputStream;

@@ -1,4 +1,3 @@
-
 /**
  * Write a description of class LogAnalyzer here.
  * 
@@ -8,7 +7,7 @@
 
 import java.util.*;
 
-import duke.edu.*;
+import edu.duke.*;
 
 public class LogAnalyzer
 {

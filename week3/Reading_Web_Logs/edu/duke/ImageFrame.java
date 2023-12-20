@@ -1,4 +1,4 @@
-package duke.edu;
+package edu.duke;
 
 import java.awt.Color;
 import java.awt.Container;

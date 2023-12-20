@@ -1,4 +1,4 @@
-package duke.edu;
+package edu.duke;
 
 import java.util.ArrayList;
 import java.util.Arrays;
