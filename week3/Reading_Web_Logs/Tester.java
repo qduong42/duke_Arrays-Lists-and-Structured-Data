@@ -22,4 +22,9 @@ public class Tester
         la.readFile("short-test_log");
         la.printAll();
     }
+    public static void main(String[] args) {
+        Tester test =  new Tester();
+        // test.testLogEntry();
+        test.testLogAnalyzer();
+    }
 }
