@@ -70,4 +70,45 @@ public class LogAnalyzer
             }
             return ipList.size();
      }
+    public HashMap<String, Integer> countVisitsPerIP(){
+        HashMap  <String, Integer> returnMap = new HashMap  <String, Integer>();
+        for(LogEntry le : records)
+        {
+            String ipadd = le.getIpAddress();
+            if(returnMap.get(ipadd) == null)
+            {
+                returnMap.put(ipadd, 1);
+            }
+            else
+            {
+                returnMap.put(ipadd, returnMap.get(ipadd) + 1);
+            }
+        }
+        return returnMap;
+    }
+    public int mostNumberVisitsByIP(HashMap  <String, Integer> map){
+        int max = 0;
+        for (int num : map.values()){
+            if (num > max)
+            {
+                max = num;
+            }
+        }
+        return max;
+    }
+    public ArrayList<String> iPsMostVisits(HashMap<String, Integer> map){
+        ArrayList<String> IPmaxVisits = new ArrayList<String>();
+        int max = mostNumberVisitsByIP(map);
+        // System.out.println("Max: " + max);
+        for(Map.Entry<String, Integer> entry : map.entrySet()){
+            if (entry.getValue() == max)
+            {
+                IPmaxVisits.add(entry.getKey());
+            }
+        }
+        return IPmaxVisits;
+    }
+    // public HashMap<String, ArrayList<String>> iPsForDays(){
+        
+    // }
 }

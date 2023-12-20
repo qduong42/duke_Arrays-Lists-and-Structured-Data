@@ -47,13 +47,27 @@ public class Tester
         int count = la.countUniqueIPsInRange(300, 399);
         System.out.println("Count Unique ip in range: " + count);
     }
+    public void testMostNumberVisitsByIP(){
+        LogAnalyzer la = new LogAnalyzer();
+        la.readFile("weblog3-short_log");
+        HashMap  <String, Integer> result = la.countVisitsPerIP();
+        System.out.println("most num visits: " + la.mostNumberVisitsByIP(result));
+    }
+    public void testIPsMostVisits(){
+        LogAnalyzer la = new LogAnalyzer();
+        la.readFile("weblog3-short_log");
+        HashMap  <String, Integer> result = la.countVisitsPerIP();
+        System.out.println("ip list: " + la.iPsMostVisits(result));
+    }
     public static void main(String[] args) {
         Tester test =  new Tester();
         // test.testLogEntry();
         // test.testLogAnalyzer();
         // test.testUniqueIP();
         // test.testPrintAllHigherThanNum();
-        // test.testUniqueIpVisitsOnDay();
-        test.testCountUniqueIPsInRange();
+        test.testUniqueIpVisitsOnDay();
+        // test.testCountUniqueIPsInRange();
+        // test.testMostNumberVisitsByIP();
+        // test.testIPsMostVisits();
     }
 }
