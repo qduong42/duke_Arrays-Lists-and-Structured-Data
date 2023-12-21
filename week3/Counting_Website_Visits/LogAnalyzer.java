@@ -62,7 +62,7 @@ public class LogAnalyzer{
             int statusCode = records.get(i).getStatusCode();
             String ipadd = records.get(i).getIpAddress();
             if (!ipList.contains(ipadd) && statusCode >= low && statusCode <= high){
-                System.out.println("Status code: " + statusCode + "unique IP: " + ipadd);
+                // System.out.println("Status code: " + statusCode + "unique IP: " + ipadd);
                 ipList.add(ipadd);
             }
         }
