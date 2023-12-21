@@ -55,16 +55,16 @@ public class Tester
     }
     public void testIPsMostVisits(){
         LogAnalyzer la = new LogAnalyzer();
-        la.readFile("weblog3-short_log");
+        la.readFile("weblog1_log");
         HashMap  <String, Integer> result = la.countVisitsPerIP();
         System.out.println("ip list: " + la.iPsMostVisits(result));
     }
     public void testIpWithMostVisitsOnDay(){
         LogAnalyzer la = new LogAnalyzer();
-        la.readFile("weblog3-short_log");
+        la.readFile("weblog1_log");
         // HashMap<String, ArrayList<String>> intermed = la.iPsForDays();
         // System.out.println("Intermed: " + intermed);
-        ArrayList<String> result = la.iPsWithMostVisitsOnDay(la.iPsForDays(), "Sep 30");
+        ArrayList<String> result = la.iPsWithMostVisitsOnDay(la.iPsForDays(), "Mar 17");
         System.out.println("Result: " +  result);
     }
     public static void main(String[] args) {
@@ -75,11 +75,11 @@ public class Tester
         // test.testPrintAllHigherThanNum();
         // test.testUniqueIpVisitsOnDay();
         // test.testCountUniqueIPsInRange();
-        test.testMostNumberVisitsByIP();
+        // test.testMostNumberVisitsByIP();
         // test.testIPsMostVisits();
-        // test.testIpWithMostVisitsOnDay();
+        test.testIpWithMostVisitsOnDay();
         // LogAnalyzer la = new LogAnalyzer();
-        // la.readFile("weblog3-short_log");
+        // la.readFile("weblog1_log");
         // HashMap<String, ArrayList<String>> map = new HashMap<String, ArrayList<String>>();
         // map = la.iPsForDays();
         // System.out.println("day:" + la.dayWithMostIPVisits(map));
