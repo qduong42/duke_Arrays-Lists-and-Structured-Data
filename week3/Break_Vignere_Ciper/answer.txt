@@ -1,397 +1,43 @@
-> Task :compileJava
+> Task :compileJava UP-TO-DATE
 > Task :processResources UP-TO-DATE
-> Task :classes
-> Task :jar
-> Task :assemble
+> Task :classes UP-TO-DATE
+> Task :jar UP-TO-DATE
+> Task :assemble UP-TO-DATE
 
-BUILD SUCCESSFUL in 4s
-3 actionable tasks: 2 executed, 1 up-to-date
+BUILD SUCCESSFUL in 1s
+3 actionable tasks: 3 up-to-date
 Select encrypted message!
-Select Dictionary!
-Word: scene
-Invalid Word: ii
-Word: athens
-Word: quince
-Word: s
-Word: house
-Word: enter
-Word: quince
-Word: flute
-Word: snout
-Word: and
-Invalid Word: starveling
-Word: quince
-Word: have
-Word: you
-Word: sent
-Word: to
-Word: bottom
-Word: s
-Word: house
-Word: is
-Word: he
-Word: come
-Word: home
-Word: yet
-Invalid Word: starveling
-Word: he
-Word: cannot
-Word: be
-Word: heard
-Word: of
-Word: out
-Word: of
-Word: doubt
-Word: he
-Word: is
-Word: transported
-Word: flute
-Word: if
-Word: he
-Word: come
-Word: not
-Word: then
-Word: the
-Word: play
-Word: is
-Word: marred
-Word: it
-Word: goes
-Word: not
-Word: forward
-Word: doth
-Word: it
-Word: quince
-Word: it
-Word: is
-Word: not
-Word: possible
-Word: you
-Word: have
-Word: not
-Word: a
-Word: man
-Word: in
-Word: all
-Word: athens
-Word: able
-Word: to
-Word: discharge
-Invalid Word: pyramus
-Word: but
-Word: he
-Word: flute
-Word: no
-Word: he
-Word: hath
-Word: simply
-Word: the
-Word: best
-Word: wit
-Word: of
-Word: any
-Word: handicraft
-Word: man
-Word: in
-Word: athens
-Word: quince
-Word: yea
-Word: and
-Word: the
-Word: best
-Word: person
-Word: too
-Word: and
-Word: he
-Word: is
-Word: a
-Word: very
-Word: paramour
-Word: for
-Word: a
-Word: sweet
-Word: voice
-Word: flute
-Word: you
-Word: must
-Word: say
-Word: paragon
-Word: a
-Word: paramour
-Word: is
-Word: god
-Word: bless
-Word: us
-Word: a
-Word: thing
-Word: of
-Word: naught
-Word: enter
-Word: snug
-Word: snug
-Word: masters
-Word: the
-Word: duke
-Word: is
-Word: coming
-Word: from
-Word: the
-Word: temple
-Word: and
-Word: there
-Word: is
-Word: two
-Word: or
-Word: three
-Word: lords
-Word: and
-Word: ladies
-Word: more
-Word: married
-Word: if
-Word: our
-Word: sport
-Word: had
-Word: gone
-Word: forward
-Word: we
-Word: had
-Word: all
-Word: been
-Word: made
-Word: men
-Word: flute
-Word: o
-Word: sweet
-Word: bully
-Word: bottom
-Word: thus
-Word: hath
-Word: he
-Word: lost
-Word: sixpence
-Word: a
-Word: day
-Word: during
-Word: his
-Word: life
-Word: he
-Word: could
-Word: not
-Word: have
-Invalid Word: scaped
-Word: sixpence
-Word: a
-Word: day
-Word: an
-Word: the
-Word: duke
-Word: had
-Word: not
-Word: given
-Word: him
-Word: sixpence
-Word: a
-Word: day
-Word: for
-Word: playing
-Invalid Word: pyramus
-Word: i
-Invalid Word: ll
-Word: be
-Word: hanged
-Word: he
-Word: would
-Word: have
-Word: deserved
-Word: it
-Word: sixpence
-Word: a
-Word: day
-Word: in
-Invalid Word: pyramus
-Word: or
-Word: nothing
-Word: enter
-Word: bottom
-Word: bottom
-Word: where
-Word: are
-Word: these
-Word: lads
-Word: where
-Word: are
-Word: these
-Word: hearts
-Word: quince
-Word: bottom
-Word: o
-Word: most
-Word: courageous
-Word: day
-Word: o
-Word: most
-Word: happy
-Word: hour
-Word: bottom
-Word: masters
-Word: i
-Word: am
-Word: to
-Word: discourse
-Word: wonders
-Word: but
-Word: ask
-Word: me
-Word: not
-Word: what
-Word: for
-Word: if
-Word: i
-Word: tell
-Word: you
-Word: i
-Word: am
-Word: no
-Word: true
-Word: athenian
-Word: i
-Word: will
-Word: tell
-Word: you
-Word: every
-Word: thing
-Word: right
-Word: as
-Word: it
-Word: fell
-Word: out
-Word: quince
-Word: let
-Word: us
-Word: hear
-Word: sweet
-Word: bottom
-Word: bottom
-Word: not
-Word: a
-Word: word
-Word: of
-Word: me
-Word: all
-Word: that
-Word: i
-Word: will
-Word: tell
-Word: you
-Word: is
-Word: that
-Word: the
-Word: duke
-Word: hath
-Word: dined
-Word: get
-Word: your
-Word: apparel
-Word: together
-Word: good
-Word: strings
-Word: to
-Word: your
-Word: beards
-Word: new
-Word: ribbons
-Word: to
-Word: your
-Word: pumps
-Word: meet
-Word: presently
-Word: at
-Word: the
-Word: palace
-Word: every
-Word: man
-Word: look
-Word: o
-Word: er
-Word: his
-Word: part
-Word: for
-Word: the
-Word: short
-Word: and
-Word: the
-Word: long
-Word: is
-Word: our
-Word: play
-Word: is
-Word: preferred
-Word: in
-Word: any
-Word: case
-Word: let
-Invalid Word: thisby
-Word: have
-Word: clean
-Word: linen
-Word: and
-Word: let
-Word: not
-Word: him
-Word: that
-Word: plays
-Word: the
-Word: lion
-Word: pair
-Word: his
-Word: nails
-Word: for
-Word: they
-Word: shall
-Word: hang
-Word: out
-Word: for
-Word: the
-Word: lion
-Word: s
-Word: claws
-Word: and
-Word: most
-Word: dear
-Word: actors
-Word: eat
-Word: no
-Word: onions
-Word: nor
-Word: garlic
-Word: for
-Word: we
-Word: are
-Word: to
-Word: utter
-Word: sweet
-Word: breath
-Word: and
-Word: i
-Word: do
-Word: not
-Word: doubt
-Word: but
-Word: to
-Word: hear
-Word: them
-Word: say
-Word: it
-Word: is
-Word: a
-Word: sweet
-Word: comedy
-Word: no
-Word: more
-Word: words
-Word: away
-Word: go
-Word: away
-Invalid Word: exeunt
-Max numWords: 376
+Select Dictionaries!
+Language: German
+Decrypted msg: Drei Hexen treten auf.
+
+ERSTE HEXE
+
+Wann treffen wir drei uns das nächstemal
+Bei Regen, Donner, Wetterstrahl?
+ZWEITE HEXE
+
+Wenn der Wirrwarr ist zerronnen,
+Schlacht verloren und gewonnen.
+DRITTE HEXE
+
+Noch vor Untergang der Sonnen.
+ERSTE HEXE
+
+Wo der Ort
+ZWEITE HEXE
+
+            Die Heide dort!
+DRITTE HEXE
+
+Da zu treffen Macbeth. Fort!
+ERSTE HEXE
+
+Ich komme, Graupelz.
+ALLE
+
+Kröte ruft; – sogleich!
+Schön ist wüst, und wüst ist schön.
+Wirbelt durch Nebel und Wolkenhöhn!
+Sie verschwinden.
+
