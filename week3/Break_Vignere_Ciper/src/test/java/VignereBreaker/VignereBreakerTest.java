@@ -97,4 +97,11 @@ public class VignereBreakerTest{
 		int [] result = vb.tryKeyLength(encrypted, 3, 'e');
 		assertArrayEquals(new int[]{10, 4, 24}, result);
 	}
+	@Test
+	public void givenEncryptedString_whenBreakVignere_ThenReturnUnencrypted(){
+		VigenereBreaker vb = new VigenereBreaker();
+		String decrypted = vb.breakVigenere();
+		String expected = "SCENE II. Athens. QUINCE'S house.";
+		assertEquals(expected, decrypted.substring(0, expected.length()));
+	}
 }

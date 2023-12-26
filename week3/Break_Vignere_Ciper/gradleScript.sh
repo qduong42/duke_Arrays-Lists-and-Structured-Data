@@ -1,5 +1,5 @@
 #/!/bin/bash
 
-./gradlew build
+./gradlew assemble
 
 java -jar build/libs/Break_Vignere_Ciper.jar

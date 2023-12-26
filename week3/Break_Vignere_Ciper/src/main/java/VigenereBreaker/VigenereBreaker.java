@@ -38,8 +38,23 @@ public class VigenereBreaker {
 
     
     
-    public void breakVigenere () {
-        //WRITE YOUR CODE HERE
+    public String breakVigenere () {
+        FileResource fr = new FileResource();
+        String message = fr.asString();
+        int [] result = tryKeyLength(message, 4, 'e');
+        VigenereCipher vc = new VigenereCipher(result);
+        String decrypted = vc.decrypt(message);
+        System.out.println(decrypted);
+        return decrypted;
     }
-    
+    public static void main(String[] args) {
+        FileResource fr = new FileResource();
+        String message = fr.asString();
+        VigenereBreaker vb = new VigenereBreaker();
+        int [] result = vb.tryKeyLength(message, 4, 'e');
+        System.out.println("Key: " + Arrays.toString(result));
+        VigenereCipher vc = new VigenereCipher(result);
+        String decrypted = vc.decrypt(message);
+        System.out.println(decrypted);
+    }
 }
