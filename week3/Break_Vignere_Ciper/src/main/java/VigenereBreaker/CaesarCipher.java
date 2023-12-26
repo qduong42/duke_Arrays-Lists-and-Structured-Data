@@ -1,3 +1,4 @@
+package VigenereBreaker;
 import edu.duke.*;
 
 public class CaesarCipher {
