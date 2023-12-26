@@ -1,5 +1,7 @@
 package VigenereBreaker;
 import VigenereBreaker.*;
+
+import java.io.File;
 import java.util.*;
 import edu.duke.*;
 
@@ -74,8 +76,9 @@ public class VigenereBreaker {
         int max = 0;
         String decrypted = "";
         // int keyl = 0;
+        char c = mostCommonCharIn(dictionary);
         for (int keyLength = 1; keyLength < 100; keyLength++) {
-            int [] key = tryKeyLength(encrypted, keyLength, 'e');
+            int [] key = tryKeyLength(encrypted, keyLength, c);
             VigenereCipher vc = new VigenereCipher(key);
             String tryDecrypted = vc.decrypt(encrypted);
             int count = countwords(tryDecrypted, dictionary);
@@ -86,32 +89,78 @@ public class VigenereBreaker {
                 // keyl = keyLength;
             }    
         }
-        validWords(decrypted, dictionary);
+        // validWords(decrypted, dictionary);
         // System.out.println("KeyLength:" + keyl);
-        System.out.println("Max numWords: " + max);
+        // System.out.println("Max numWords: " + max);
         return (decrypted);
     }
+    public char mostCommonCharIn(HashSet<String> dictionary){
+        HashMap <Character, Integer> counts = new HashMap <Character, Integer>(); 
+        for (String word :dictionary){
+            for(int i = 0; i < word.length();i++){
+                char c = word.charAt(i);
+                if (counts.containsKey(c)){
+                    counts.put(c, counts.get(c) + 1);
+                }
+                else{
+                    counts.put(c, 1);
+                }
+            }
+        }
+        int max = 0;
+        char result = '\0';
+        for (Map.Entry<Character, Integer> entry  : counts.entrySet()) {
+            if (entry.getValue() > max)
+            {
+                max = entry.getValue();
+                result = entry.getKey();
+            }
+        }
+        return result;
+    }
+    public void breakForAllLangs(String encrypted, HashMap<String, HashSet <String>> languages){
+        int max = 0;
+        int count = 0;
+        String language = "";
+        String decrypted = "";
+        for (Map.Entry<String, HashSet<String>> entry : languages.entrySet()) {
+            String tryDecrypted = breakForLanguage(encrypted, entry.getValue());
+            count = countwords(tryDecrypted, entry.getValue());
+            // System.out.println("Count: " + count + "language: " + entry.getKey());
+            if (count > max){
+                language = entry.getKey();
+                decrypted = tryDecrypted;
+                max = count;
+            }
+        }
+        System.out.println("Language: " + language);
+        System.out.println("Decrypted msg: " + decrypted);
+    }
 
-    public String breakVigenere () {
+    public void breakVigenere () {
         System.out.println("Select encrypted message!");
         FileResource fr = new FileResource();
         String message = fr.asString();
-        System.out.println("Select Dictionary!");
-        FileResource dictfr = new FileResource();
-        HashSet<String> result = new HashSet<String>();
-        result = readDictionary(dictfr);
+        System.out.println("Select Dictionaries!");
+        DirectoryResource dr = new DirectoryResource();
+        HashMap <String, HashSet<String>> map = new HashMap <String, HashSet<String>>();
+        for (File f : dr.selectedFiles()) {
+            HashSet<String> result = new HashSet<String>();
+            FileResource dictfr = new FileResource(f);
+            result = readDictionary(dictfr);
+            map.put(f.getName(), result);
+        }
+        breakForAllLangs(message, map);
         // int [] key = tryKeyLength(message, 38, 'e');
-        String decrypted = breakForLanguage(message, result);
         // VigenereCipher vc = new VigenereCipher(key);
         // String tryDecrypted = vc.decrypt(message);
         // int count = countwords(tryDecrypted, result);
         // System.out.println("Count:" + count);
         // String decrypted = vc.decrypt(message);
-        return decrypted;
     }
     public static void main(String[] args) {
         VigenereBreaker vb = new VigenereBreaker();
-        String decrypted = vb.breakVigenere();
+        vb.breakVigenere();
         // System.out.println(decrypted);
     }
 }
