@@ -1,4 +1,5 @@
 package VigenereBreaker;
+import VigenereBreaker.*;
 import java.util.*;
 import edu.duke.*;
 
@@ -35,26 +36,82 @@ public class VigenereBreaker {
      * Theoretically in every slice, l should occur most often with big enough dataset for it to be the most common letter in every slice. With this artitificially made two words with 8/14 e + ' ' in each slice 2-3 e vs 1 of every other letter.
      * for loop to collect all slices. go through each slice and find keyshift to have e => convert to get original key EXTENSION: convert key back to string key.
      */
+    public HashSet<String> readDictionary(FileResource fr){
+        HashSet<String> hset = new HashSet<String>();
+        for (String line : fr.lines()) {
+            hset.add(line.toLowerCase());
+        }
+        return hset;
+    } 
+    
+    public void validWords(String message, HashSet <String> dictionary){
+        String[] words = new String[message.split("\\W+").length];
+        words = message.split("\\W+");
+        for (int i = 0; i < words.length; i++) {
+            if (dictionary.contains(words[i].toLowerCase())){
+                System.out.println("Word: " + words[i].toLowerCase());
+            }
+            else
+                System.out.println("Invalid Word: " + words[i].toLowerCase());
 
+        }
+    }
+
+    public int countwords(String message, HashSet <String> dictionary){
+        String[] words = new String[message.split("\\W+").length];
+        words = message.split("\\W+");
+        int count = 0;
+        for (int index = 0; index < words.length; index++) {
+            if (dictionary.contains(words[index].toLowerCase()) && words[index].trim().length()> 0){
+                count++;
+            }
+        }
+        // System.out.println("count/words:" + count + "/" + words.length);
+        return count;
+    }
     
-    
+    public String breakForLanguage(String encrypted, HashSet <String> dictionary){
+        int max = 0;
+        String decrypted = "";
+        // int keyl = 0;
+        for (int keyLength = 1; keyLength < 100; keyLength++) {
+            int [] key = tryKeyLength(encrypted, keyLength, 'e');
+            VigenereCipher vc = new VigenereCipher(key);
+            String tryDecrypted = vc.decrypt(encrypted);
+            int count = countwords(tryDecrypted, dictionary);
+            if (count > max)
+            {
+                max = count;
+                decrypted = tryDecrypted;
+                // keyl = keyLength;
+            }    
+        }
+        validWords(decrypted, dictionary);
+        // System.out.println("KeyLength:" + keyl);
+        System.out.println("Max numWords: " + max);
+        return (decrypted);
+    }
+
     public String breakVigenere () {
+        System.out.println("Select encrypted message!");
         FileResource fr = new FileResource();
         String message = fr.asString();
-        int [] result = tryKeyLength(message, 4, 'e');
-        VigenereCipher vc = new VigenereCipher(result);
-        String decrypted = vc.decrypt(message);
-        System.out.println(decrypted);
+        System.out.println("Select Dictionary!");
+        FileResource dictfr = new FileResource();
+        HashSet<String> result = new HashSet<String>();
+        result = readDictionary(dictfr);
+        // int [] key = tryKeyLength(message, 38, 'e');
+        String decrypted = breakForLanguage(message, result);
+        // VigenereCipher vc = new VigenereCipher(key);
+        // String tryDecrypted = vc.decrypt(message);
+        // int count = countwords(tryDecrypted, result);
+        // System.out.println("Count:" + count);
+        // String decrypted = vc.decrypt(message);
         return decrypted;
     }
     public static void main(String[] args) {
-        FileResource fr = new FileResource();
-        String message = fr.asString();
         VigenereBreaker vb = new VigenereBreaker();
-        int [] result = vb.tryKeyLength(message, 4, 'e');
-        System.out.println("Key: " + Arrays.toString(result));
-        VigenereCipher vc = new VigenereCipher(result);
-        String decrypted = vc.decrypt(message);
-        System.out.println(decrypted);
+        String decrypted = vb.breakVigenere();
+        // System.out.println(decrypted);
     }
 }
